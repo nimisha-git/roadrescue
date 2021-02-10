@@ -114,7 +114,7 @@ $menu_4=get_field('menu_4', 'option');
 	    <div class="main-navigation-list-wrapper mn4">
 	        <div class="main-navigation-list">
 	            <?php foreach ($menu_4['menu'] as $menu) :
-	        		echo '<span class="title"><a href="'.$menu['link']['url'].'">'.$menu['link']['title'].'</a></span><br />';
+	        		echo '<span class="title"><a href="'.$menu['link']['url'].'" class="'.$menu['class'].'">'.$menu['link']['title'].'</a></span><br />';
 	        	endforeach;
 	        	?>
 	            <span class="sec-nav">

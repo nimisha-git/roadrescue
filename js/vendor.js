@@ -49,6 +49,31 @@ jQuery(document).on("click",".hamburger",function(){
 	}
 });
 
+
+jQuery(document).on("click",".close-menu",function(){
+	if (jQuery('.sitemenu').hasClass("is-down") ) 
+	{
+		jQuery(".sitemenu").removeClass("is-down");
+		jQuery(".sitemenu").addClass("is-hidden");
+		jQuery('html').removeClass('is-nav-open');
+	}
+	else if ( jQuery('.sitemenu').hasClass( "is-hidden" ) ) 
+	{
+		jQuery(".sitemenu").removeClass("is-hidden");
+		jQuery('html').addClass('is-nav-open');
+	}else
+	{
+		jQuery(".sitemenu").addClass("is-down"); 
+		jQuery('.sitemenu').delay(1000).queue(function(){
+			jQuery(this).removeClass('is-down').addClass('is-hidden').clearQueue()
+		});
+		jQuery('html').removeClass('is-nav-open');
+	}
+});
+jQuery(".close-menu").click(function() {
+    jQuery(".hamburger--spin").removeClass("is-active");
+});
+
 /*=== Tabbing Section ===*/
 jQuery(document).ready(function(){	
 	jQuery('.nav-tabs ul li').click(function(){
